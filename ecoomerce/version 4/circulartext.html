@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+		  background: #111;
+		}
+
+		.container {
+		  /*centers in the container*/
+		  text-align: center;
+		}
+
+		div.circTxt {
+		  /*allows for centering*/
+		  display: inline-block;
+		  /*adjust as needed*/
+		  margin-bottom: 128px;
+		  color: whitesmoke;
+		}
+	</style>
+</head>
+<body>
+	<!--just a container used to position in the page-->
+	<div class="container">
+	  <!--the holders for the text, reuse as desired-->
+	 	 <div class="circTxt" id="test"></div>
+	</div>
+
+	<script type="text/javascript">
+		function circularText(txt, radius, classIndex) {
+		  txt = txt.split(""),
+		    classIndex = document.getElementsByClassName("circTxt")[classIndex];
+
+		  var deg = 190 / txt.length,
+		    origin = 270;
+
+		  txt.forEach((ea) => {
+		    ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+		    classIndex.innerHTML += ea;
+		    origin += deg;
+		  });
+		}
+
+		circularText("Basu Higher Secondary School ", 100, 0);
+		
+	</script>
+
+
+	<div class="container">
+	  <!--the holders for the text, reuse as desired-->
+	 	 <div class="circTxt" id="test"></div>
+	</div>
+
+		<script type="text/javascript">
+		function circularText(txt, radius, classIndex) {
+		  txt = txt.split(""),
+		    classIndex = document.getElementsByClassName("circTxt")[classIndex];
+
+		  var deg = -145 / txt.length,
+		    origin = 240;
+		   
+		  txt.forEach((ea) => {
+		    ea = `<p style='height:${radius}px;position:absolute;transform:rotate(${origin}deg);transform-origin:0 100%'>${ea}</p>`;
+		    classIndex.innerHTML += ea;
+		    origin += deg;
+		  });
+		}
+
+		circularText("Bhaktapur", 100, 0);
+		
+	</script>
+
+<!-- 	<h2 id="demo2">Here’s some curved text flowing counter-clockwise.</h2>
+	<script type="text/javascript">
+		new CircleType(document.getElementById('demo2'))
+		  .dir(-1)
+		  .radius(384);
+	</script> -->
+
+</body>
+</html>
